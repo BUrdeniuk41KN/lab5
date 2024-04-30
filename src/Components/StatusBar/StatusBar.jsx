@@ -5,16 +5,14 @@ import { Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
 const StatusBar = () => {
-    const typeOBJ = useSelector(state => state.toggleTraficType);
-    const selectedOPred = useSelector(state => state.redColor);
-    const selectedOPyelow = useSelector(state => state.yelowColor);
-    const selectedOPgreen = useSelector(state => state.greenColor);
+    const typeOBJ = useSelector(state => state.StatusBarState.toggleTraficType);
+    const selectedOPred = useSelector(state => state.StatusBarState.redColor);
+    const selectedOPyelow = useSelector(state => state.StatusBarState.yelowColor);
+    const selectedOPgreen = useSelector(state => state.StatusBarState.greenColor);
     const dispatch = useDispatch();
 
     
-    const handleBTN = () => {
-        dispatch(toggleTrafic());
-    }
+
 
     const hlColor = (color) => {
         dispatch(changeColor(color));
@@ -22,19 +20,9 @@ const StatusBar = () => {
     
     return (
         <div>
-            Side bar 
-            <Form>
-                <Form.Check
-                type="switch"
-                id="custom-switch"
-                label="Toggle type"
-                checked={typeOBJ}
-                onChange={() => {}}
-                onClick={handleBTN}
-                />
-            </Form>
-            <br></br>
-            <p>Change color</p>
+            <h4>Side bar</h4> 
+            <p>{"Mode vertical: " +  typeOBJ}</p>
+            <h4>Change color</h4> 
             <Form>
                 
                 <Form.Check

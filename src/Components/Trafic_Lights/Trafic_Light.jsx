@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './TraficLight.css'
 
 const TraficLight = (props) => {
-    const typeOBJ = useSelector(state => state.toggleTraficType);
-    const colorSelected = useSelector(state => state.colorNowSelected);
+    const typeOBJ = useSelector(state => state.StatusBarState.toggleTraficType);
+    const colorSelected = useSelector(state => state.StatusBarState.colorNowSelected);
     let tlContoroller = props.tlContoroller;
     let type = "vertical";
     
@@ -45,7 +45,8 @@ const TraficLight = (props) => {
 
     return (
         <div className='container'>
-            <p>Color Active = {colorSelected}</p>
+            <p> </p>
+            <p> </p>
             <div className="contain_trafic">
                 <div className={"trafic trafic_" + type}>
                     <div id={Rid_red} className='colors'></div>
